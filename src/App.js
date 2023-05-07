@@ -9,10 +9,10 @@ function App() {
   useEffect(() => {
     fetchChatRecords();
   }, []);
-
+  
   async function fetchChatRecords() {
     try {
-      const response = await axios.get('http://localhost:8080/chat-records');
+      const response = await axios.get('http://18.216.59.108:8080/chat-records');
       setChatRecords(response.data);
     } catch (error) {
       console.error('Error fetching chat records:', error);
@@ -27,7 +27,7 @@ function App() {
   
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:8080/api/ask-question', {
+      const response = await axios.post('http://18.216.59.108:8080/api/ask-question', {
         question: userQuestion,
       });
   
